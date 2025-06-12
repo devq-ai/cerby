@@ -20,8 +20,8 @@ from fastapi.testclient import TestClient
 from httpx import AsyncClient
 import logfire
 
-# Add project root to Python path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add current directory to Python path to ensure we import the right main.py
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from main import app
 from src.db.database import Base, BaseModel, get_db, db_manager
