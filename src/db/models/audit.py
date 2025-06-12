@@ -138,7 +138,7 @@ class AuditLog(BaseModel):
 
     # Action details
     changes = Column(JSON, nullable=True)  # Before/after values for updates
-    metadata = Column(JSON, default=dict, nullable=False)  # Additional context
+    action_metadata = Column(JSON, default=dict, nullable=False)  # Additional context
     reason = Column(Text, nullable=True)  # Business justification
 
     # Compliance flags

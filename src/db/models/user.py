@@ -7,7 +7,7 @@ who manage identities and policies.
 
 from datetime import datetime
 from typing import Optional, List, TYPE_CHECKING
-from sqlalchemy import Column, String, Boolean, DateTime, Text, JSON
+from sqlalchemy import Column, String, Boolean, DateTime, Text, JSON, Integer
 from sqlalchemy.orm import relationship, Mapped
 from passlib.context import CryptContext
 
