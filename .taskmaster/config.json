@@ -1,0 +1,40 @@
+{
+  "models": {
+    "primary": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "temperature": 0.2,
+      "maxTokens": 8192
+    },
+    "secondary": {
+      "provider": "anthropic",
+      "model": "claude-3-5-haiku-20241022",
+      "temperature": 0.2,
+      "maxTokens": 8192
+    },
+    "research": {
+      "provider": "perplexity",
+      "model": "llama-3.1-sonar-large-128k-online",
+      "temperature": 0.1,
+      "maxTokens": 4096
+    }
+  },
+  "defaults": {
+    "subtasksPerTask": 5,
+    "priority": "medium",
+    "autoExpand": true,
+    "researchEnabled": true
+  },
+  "logging": {
+    "level": "info",
+    "file": ".taskmaster/taskmaster.log"
+  },
+  "features": {
+    "complexityAnalysis": true,
+    "dependencyValidation": true,
+    "autoSave": true,
+    "backupEnabled": true,
+    "backupInterval": 300
+  },
+  "version": "1.0.0"
+}

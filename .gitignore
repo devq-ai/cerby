@@ -1,0 +1,147 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# Logs
+*.log
+logs/
+*.pid
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+.nox/
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+htmlcov/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# TaskMaster AI
+.taskmaster/backup/
+.taskmaster/*.log
+.taskmaster/temp/
+
+# Logfire
+.logfire/
+!.logfire/logfire_credentials.json.example
+
+# Panel/Bokeh
+*.bokeh
+
+# Darwin GA outputs
+ga_output/
+ga_results/
+*.pickle
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Security
+*.pem
+*.key
+*.cert
+*.crt
+
+# Data files (except examples)
+data/
+!data/examples/
+*.csv
+*.json
+!tasks.json
+!config.json
+!package.json
+!tsconfig.json
+
+# Cache
+.cache/
+*.cache
+
+# Node modules (if using any JS tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Distribution
+dist/
+build/
+
+# Documentation build
+docs/_build/
+site/
+
+# Profiling
+*.prof
+*.lprof
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
