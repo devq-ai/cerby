@@ -557,12 +557,13 @@ class GeneticAlgorithmEngine:
         )
 
         if self.config.logging.metrics_export:
-            logfire.info(
-                "Evolution Progress",
-                generation=generation,
-                **stats,
+            # Merge all metrics, avoiding duplicate keys
+            metrics = {
+                "evolution_generation": generation,
+                **{k: v for k, v in stats.items() if k != "generation"},
                 **diversity
-            )
+            }
+            logfire.info("Evolution Progress", **metrics)
 
     def _save_snapshot(self, generation: int) -> None:
         """Save population snapshot."""
