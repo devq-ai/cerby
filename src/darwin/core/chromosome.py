@@ -153,9 +153,21 @@ class Gene:
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert gene to dictionary representation."""
+        # Handle serialization of value based on type
+        value = self.value
+        if self.gene_type == GeneType.EFFECT and isinstance(value, PolicyEffect):
+            value = value.value
+        elif self.gene_type == GeneType.CONDITION and isinstance(value, dict):
+            # Handle ConditionOperator in condition values
+            if "operator" in value and isinstance(value["operator"], ConditionOperator):
+                value = {
+                    **value,
+                    "operator": value["operator"].value
+                }
+
         return {
             "type": self.gene_type.value,
-            "value": self.value,
+            "value": value,
             "mutable": self.mutable,
             "metadata": self.metadata
         }
@@ -163,9 +175,23 @@ class Gene:
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "Gene":
         """Create gene from dictionary representation."""
+        gene_type = GeneType(data["type"])
+        value = data["value"]
+
+        # Handle deserialization of value based on type
+        if gene_type == GeneType.EFFECT and isinstance(value, str):
+            value = PolicyEffect(value)
+        elif gene_type == GeneType.CONDITION and isinstance(value, dict):
+            # Handle ConditionOperator in condition values
+            if "operator" in value and isinstance(value["operator"], str):
+                value = {
+                    **value,
+                    "operator": ConditionOperator(value["operator"])
+                }
+
         return cls(
-            gene_type=GeneType(data["type"]),
-            value=data["value"],
+            gene_type=gene_type,
+            value=value,
             mutable=data.get("mutable", True),
             metadata=data.get("metadata", {})
         )
