@@ -1,4 +1,4 @@
-## Cerby - Sr Data Engineer
+## Sr Data Engineer
 
 ### OVERVIEW & IMPACT:
 
